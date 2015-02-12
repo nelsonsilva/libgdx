@@ -170,6 +170,8 @@ public class AndroidGL20 implements GL20 {
 
 	public native void glGetBufferParameteriv (int target, int pname, IntBuffer params);
 
+    public native void glGetBufferSubData(int target, int offset, Buffer data);
+
 	public native int glGetError ();
 
 	public native void glGetFloatv (int pname, FloatBuffer params);

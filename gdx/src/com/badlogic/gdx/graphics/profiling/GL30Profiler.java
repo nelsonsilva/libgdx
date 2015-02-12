@@ -506,6 +506,12 @@ public class GL30Profiler extends GLProfiler implements GL30 {
 	}
 
 	@Override
+    public void glGetBufferSubData (int target, int offset, Buffer data) {
+        calls++;
+        gl30.glGetBufferSubData(target, offset, data);
+    }
+
+	@Override
 	public void glGetFloatv (int pname, FloatBuffer params) {
 		calls++;
 		gl30.glGetFloatv(pname, params);

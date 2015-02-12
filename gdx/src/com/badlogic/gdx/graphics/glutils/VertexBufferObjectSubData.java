@@ -147,15 +147,15 @@ public class VertexBufferObjectSubData implements VertexData {
 	}
 
 	/** Binds this VertexBufferObject for rendering via glDrawArrays or glDrawElements
-	 * 
+	 *
 	 * @param shader the shader */
 	@Override
-	public void bind (final ShaderProgram shader) {
+	public void bind (final GenericShaderProgram shader) {
 		bind(shader, null);
 	}
 
 	@Override
-	public void bind (final ShaderProgram shader, final int[] locations) {
+	public void bind (final GenericShaderProgram shader, final int[] locations) {
 		final GL20 gl = Gdx.gl20;
 
 		gl.glBindBuffer(GL20.GL_ARRAY_BUFFER, bufferHandle);
@@ -191,15 +191,15 @@ public class VertexBufferObjectSubData implements VertexData {
 	}
 
 	/** Unbinds this VertexBufferObject.
-	 * 
+	 *
 	 * @param shader the shader */
 	@Override
-	public void unbind (final ShaderProgram shader) {
+	public void unbind (final GenericShaderProgram shader) {
 		unbind(shader, null);
 	}
 
 	@Override
-	public void unbind (final ShaderProgram shader, final int[] locations) {
+	public void unbind (final GenericShaderProgram shader, final int[] locations) {
 		final GL20 gl = Gdx.gl20;
 		final int numAttributes = attributes.size();
 		if (locations == null) {

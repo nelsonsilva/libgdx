@@ -386,6 +386,21 @@ class LwjglGL20 implements com.badlogic.gdx.graphics.GL20 {
 		GL15.glGetBufferParameter(target, pname, params);
 	}
 
+    public void glGetBufferSubData (int target, int offset, Buffer data) {
+        if (data == null)
+            throw new GdxRuntimeException("Using null for the data not possible, blame LWJGL");
+        else if (data instanceof ByteBuffer)
+            GL15.glGetBufferSubData(target, offset, (ByteBuffer) data);
+        else if (data instanceof IntBuffer)
+            GL15.glGetBufferSubData(target, offset, (IntBuffer) data);
+        else if (data instanceof FloatBuffer)
+            GL15.glGetBufferSubData(target, offset, (FloatBuffer) data);
+        else if (data instanceof DoubleBuffer)
+            GL15.glGetBufferSubData(target, offset, (DoubleBuffer) data);
+        else if (data instanceof ShortBuffer) //
+            GL15.glGetBufferSubData(target, offset, (ShortBuffer)data);
+    }
+
 	public int glGetError () {
 		return GL11.glGetError();
 	}

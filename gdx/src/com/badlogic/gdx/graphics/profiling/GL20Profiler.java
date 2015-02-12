@@ -505,6 +505,12 @@ public class GL20Profiler extends GLProfiler implements GL20 {
 	}
 
 	@Override
+    public void glGetBufferSubData (int target, int offset, Buffer data) {
+        calls++;
+        gl20.glGetBufferSubData(target, offset, data);
+    }
+
+	@Override
 	public void glGetFloatv (int pname, FloatBuffer params) {
 		calls++;
 		gl20.glGetFloatv(pname, params);

@@ -511,6 +511,8 @@ public interface GL20 {
 
 	public void glGetBufferParameteriv (int target, int pname, IntBuffer params);
 
+    public void glGetBufferSubData (int target, int offset, Buffer data);
+
 	public void glGetFloatv (int pname, FloatBuffer params);
 
 	public void glGetFramebufferAttachmentParameteriv (int target, int attachment, int pname, IntBuffer params);

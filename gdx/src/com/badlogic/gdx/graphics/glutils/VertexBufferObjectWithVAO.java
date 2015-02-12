@@ -135,12 +135,12 @@ public class VertexBufferObjectWithVAO implements VertexData {
 	 * @param shader the shader
 	 */
 	@Override
-	public void bind(ShaderProgram shader) {
+	public void bind(GenericShaderProgram shader) {
 		bind(shader, null);
 	}
 
 	@Override
-	public void bind(ShaderProgram shader, int[] locations) {
+	public void bind(GenericShaderProgram shader, int[] locations) {
 		GL30 gl = Gdx.gl30;
 		if (vaoDirty || !gl.glIsVertexArray(vaoHandle)) {
 			tmpHandle.clear();
@@ -162,7 +162,7 @@ public class VertexBufferObjectWithVAO implements VertexData {
 		isBound = true;
 	}
 
-	private void bindAttributes(ShaderProgram shader, int[] locations) {
+	private void bindAttributes(GenericShaderProgram shader, int[] locations) {
 		final GL20 gl = Gdx.gl20;
 		gl.glBindBuffer(GL20.GL_ARRAY_BUFFER, bufferHandle);
 		final int numAttributes = attributes.size();
@@ -205,12 +205,12 @@ public class VertexBufferObjectWithVAO implements VertexData {
 	 * @param shader the shader
 	 */
 	@Override
-	public void unbind(final ShaderProgram shader) {
+	public void unbind(final GenericShaderProgram shader) {
 		unbind(shader, null);
 	}
 
 	@Override
-	public void unbind(final ShaderProgram shader, final int[] locations) {
+	public void unbind(final GenericShaderProgram shader, final int[] locations) {
 		GL30 gl = Gdx.gl30;
 		gl.glBindVertexArray(0);
 		isBound = false;

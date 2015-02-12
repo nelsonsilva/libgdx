@@ -277,6 +277,10 @@ public class JglfwGL20 implements GL20 {
 		GL.glGetBufferParameteriv(target, pname, params, getPosition(params));
 	}
 
+    public void glGetBufferSubData(int target, int offset, Buffer data) {
+        GL.glGetBufferSubData(target, offset, data.remaining(), getPosition(data));
+    }
+
 	public void glGenBuffers (int n, IntBuffer buffers) {
 		GL.glGenBuffers(n, buffers, getPosition(buffers));
 	}

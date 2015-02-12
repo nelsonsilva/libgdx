@@ -44,6 +44,8 @@ import com.badlogic.gdx.tests.utils.GdxTest;
 import com.badlogic.gdx.tests.utils.GdxTests;
 
 public class LwjglTestStarter extends JFrame {
+    private static boolean useGL30;
+
 	public LwjglTestStarter () throws HeadlessException {
 		super("libgdx Tests");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,6 +72,7 @@ public class LwjglTestStarter extends JFrame {
 		config.height = 480;
 		config.title = testName;
 		config.forceExit = false;
+        config.useGL30 = useGL30;
 		new LwjglApplication(test, config);
 		return true;
 	}
@@ -132,8 +135,16 @@ public class LwjglTestStarter extends JFrame {
 	 * @param argv command line arguments
 	 */
 	public static void main (String[] argv) throws Exception {
-		if (argv.length > 0) {
-			if (runTest(argv[0])) {
+        String testName = null;
+        for (int i = 0; i < argv.length; i++) {
+            if ("-useGL30".equals(argv[i])) {
+                useGL30 = true;
+            } else {
+                testName = argv[i];
+            }
+        }
+        if (testName != null) {
+			if (runTest(testName)) {
 				return;
 				// Otherwise, fall back to showing the list
 			}
