@@ -129,7 +129,7 @@ public class SpriteBatch implements Batch {
         String vertexShader, fragmentShader;
 
         if (Gdx.gl30 != null) {
-            vertexShader = "#version 150\n"
+            vertexShader = "#version " + ShaderProgram.getGLSLVersion() + "\n"
                 + "in vec4 " + ShaderProgram.POSITION_ATTRIBUTE + ";\n" //
                 + "in vec4 " + ShaderProgram.COLOR_ATTRIBUTE + ";\n" //
                 + "in vec2 " + ShaderProgram.TEXCOORD_ATTRIBUTE + "0;\n" //
@@ -144,7 +144,7 @@ public class SpriteBatch implements Batch {
                 + "   v_texCoords = " + ShaderProgram.TEXCOORD_ATTRIBUTE + "0;\n" //
                 + "   gl_Position =  u_projTrans * " + ShaderProgram.POSITION_ATTRIBUTE + ";\n" //
                 + "}\n";
-            fragmentShader = "#version 150\n"
+            fragmentShader = "#version " + ShaderProgram.getGLSLVersion() + "\n"
                 + "#ifdef GL_ES\n" //
                 + "#define LOWP lowp\n" //
                 + "precision mediump float;\n" //

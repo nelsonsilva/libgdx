@@ -165,6 +165,18 @@ public class ShaderProgram implements Disposable {
 		this(vertexShader.readString(), fragmentShader.readString());
 	}
 
+	/**
+	 * Returns the GLSL version.
+	 */
+	public static String getGLSLVersion() {
+		if (Gdx.gl30 == null) {
+			return "120";
+		}
+		return (Gdx.app.getType() == Application.ApplicationType.Desktop ||
+				Gdx.app.getType() == Application.ApplicationType.HeadlessDesktop) ?
+				"150" : "300 es";
+	}
+
 	/** Loads and compiles the shaders, creates a new program and links the shaders.
 	 * 
 	 * @param vertexShader
@@ -189,6 +201,7 @@ public class ShaderProgram implements Disposable {
 
 	private int loadShader (int type, String source) {
 		GL20 gl = Gdx.gl20;
+
 		IntBuffer intbuf = BufferUtils.newIntBuffer(1);
 
 		int shader = gl.glCreateShader(type);

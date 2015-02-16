@@ -70,6 +70,7 @@ public class LwjglTestStarter extends JFrame {
 		config.height = 480;
 		config.title = testName;
 		config.forceExit = false;
+		config.useGL30 = test.needsGL30();
 		new LwjglApplication(test, config);
 		return true;
 	}

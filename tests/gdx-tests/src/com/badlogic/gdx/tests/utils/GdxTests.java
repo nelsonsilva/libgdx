@@ -50,6 +50,7 @@ import com.badlogic.gdx.tests.g3d.SkeletonTest;
 import com.badlogic.gdx.tests.g3d.TextureRegion3DTest;
 import com.badlogic.gdx.tests.gles2.HelloTriangle;
 import com.badlogic.gdx.tests.gles2.SimpleVertexShader;
+import com.badlogic.gdx.tests.gles3.HelloGLES3;
 import com.badlogic.gdx.tests.net.NetAPITest;
 import com.badlogic.gdx.tests.superkoalio.SuperKoalio;
 import com.badlogic.gdx.utils.ObjectMap;
@@ -122,6 +123,7 @@ public class GdxTests {
 		GroupCullingTest.class,
 		GroupFadeTest.class,
 		GroupTest.class,
+		HelloGLES3.class,
 		HelloTriangle.class,
 		HexagonalTiledMapTest.class,
 		I18NMessageTest.class,
