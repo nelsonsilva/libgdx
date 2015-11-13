@@ -1,0 +1,11 @@
+ObjectAL binding for Intel Multi-OS Engine
+------------------------------------------
+
+Unpack the ObjectAL sources to this directory 
+(the result should be a directory named ObjectAL).
+
+TODO: The generated inline method stubs are not compiled 
+as part of the libgdx build process, and not distributed
+with the libgdx native libraries. This is not causing a problem
+because these methods are not used by the backend, but it should be 
+fixed anyways.

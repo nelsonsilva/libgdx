@@ -1,0 +1,42 @@
+{
+  "platform": "iOS",
+  "architecture": "armv7",
+  "package-base": "ios.objectal",
+  "base-sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk",
+  "header-search-paths": [],
+  "user-header-search-paths": [
+    "${PROJECT}/objectal/ObjectAL/ObjectAL"
+  ],
+  "framework-search-paths": [],
+  "source": "#import \u003cOALSimpleAudio.h\u003e\n#import \u003cOpenAL/ALBuffer.h\u003e\n#import \u003cOpenAL/ALSource.h\u003e\n#import \u003cAudioTrack/OALAudioTrack.h\u003e\n",
+  "output": "src",
+  "docsets": [
+    "com.apple.adc.documentation.AppleiOS8.1.iOSLibrary.docset"
+  ],
+  "unit-rules": [
+    {
+      "final": false,
+      "conditions": [
+        {
+          "condition": "path-prefix",
+          "value": "${SDK}"
+        }
+      ],
+      "actions": [
+        {
+          "action": "skip-generation"
+        },
+        {
+          "action": "replace-package-base",
+          "value": "ios"
+        }
+      ]
+    }
+  ],
+  "logs-path": "${PROJECT}/logs/natjgen.log",
+  "type-config-clean-output": false,
+  "header-file-resolving-paths": [
+    "${SDK}/usr/include",
+    "${SDK}/System/Library/Frameworks"
+  ]
+}

@@ -55,6 +55,7 @@
     <module>gdx/jni/maven</module>
     <module>backends/gdx-backend-android</module>
     <module>backends/gdx-backend-robovm</module>
+    <module>backends/gdx-backend-moe</module>
     <module>backends/gdx-backend-lwjgl</module>
     <module>backends/gdx-backend-jglfw</module>
     <module>backends/gdx-backends-gwt</module>
